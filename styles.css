@@ -216,6 +216,10 @@ button {
   border-radius: 999px;
 }
 
+.header-add-btn {
+  font-size: 1rem;
+}
+
 .file-btn svg {
   width: 1rem;
   height: 1rem;
@@ -565,7 +569,7 @@ menu {
 
 @media (max-width: 780px) {
   h1 {
-    font-size: 1.2rem;
+    font-size: 1.32rem;
   }
 
   .file-controls {
@@ -573,10 +577,17 @@ menu {
   }
 
   .file-btn {
-    width: 1.78rem;
-    min-width: 1.78rem;
-    height: 1.78rem;
-    font-size: 0.73rem;
+    width: 2.08rem;
+    min-width: 2.08rem;
+    height: 2.08rem;
+    font-size: 0.82rem;
+  }
+
+  .header-add-btn {
+    width: 2.08rem;
+    min-width: 2.08rem;
+    height: 2.08rem;
+    font-size: 1.1rem;
   }
 
   .summary-grid {
@@ -662,6 +673,10 @@ menu {
 }
 
 @media (max-width: 520px) {
+  h1 {
+    font-size: 1.38rem;
+  }
+
   .summary-card h2 {
     font-size: clamp(0.84rem, 3.8vw, 0.96rem);
   }
@@ -675,5 +690,18 @@ menu {
     height: 1.86rem;
     min-width: 1.86rem;
     min-height: 1.86rem;
+  }
+
+  .file-btn {
+    width: 2.14rem;
+    min-width: 2.14rem;
+    height: 2.14rem;
+  }
+
+  .header-add-btn {
+    width: 2.14rem;
+    min-width: 2.14rem;
+    height: 2.14rem;
+    font-size: 1.16rem;
   }
 }

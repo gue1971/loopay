@@ -30,6 +30,7 @@
         <h1>Loopay</h1>
       </div>
       <div class="file-controls">
+        <button id="newBtn" class="icon-btn add-btn header-add-btn" title="追加" aria-label="追加">＋</button>
         <input id="jsonFileInput" type="file" accept="application/json,.json" hidden />
         <label class="btn btn-accent-soft file-btn icon-only" for="jsonFileInput" title="Import" aria-label="Import">
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -74,9 +75,7 @@
                 <th>月額 / 年額</th>
                 <th>契約ID / 支払方法</th>
                 <th>メモ</th>
-                <th class="actions-head">
-                  <button id="newBtn" class="icon-btn add-btn" title="追加" aria-label="追加">＋</button>
-                </th>
+                <th class="actions-head"></th>
               </tr>
             </thead>
             <tbody id="subscriptionRows"></tbody>
