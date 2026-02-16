@@ -20,6 +20,7 @@ const el = {
   monthlyTotal: document.getElementById("monthlyTotal"),
   yearlyTotal: document.getElementById("yearlyTotal"),
   categoryTabs: document.getElementById("categoryTabs"),
+  tableWrap: document.getElementById("tableWrap"),
   tagsPanel: document.getElementById("tagsPanel"),
   tagChips: document.getElementById("tagChips"),
   rows: document.getElementById("subscriptionRows"),
@@ -218,16 +219,30 @@ function renderSummary() {
 }
 
 function renderCategoryTabs() {
-  const current = new Set(state.subscriptions.map((item) => item.category));
-  const extras = [...current].filter((c) => !CATEGORY_ORDER.includes(c)).sort();
-  const categories = [...CATEGORY_ORDER, ...extras];
-  const buttons = [{ value: "all", label: "全て" }, ...categories.map((c) => ({ value: c, label: c }))];
+  const buttons = getCategoryButtons();
   el.categoryTabs.innerHTML = buttons
     .map(
       (b) =>
         `<button class="tab-btn ${state.filters.category === b.value ? "active" : ""}" data-category="${b.value}">${b.label}</button>`
     )
     .join("");
+}
+
+function getCategoryButtons() {
+  const current = new Set(state.subscriptions.map((item) => item.category));
+  const extras = [...current].filter((c) => !CATEGORY_ORDER.includes(c)).sort();
+  const categories = [...CATEGORY_ORDER, ...extras];
+  return [{ value: "all", label: "全て" }, ...categories.map((c) => ({ value: c, label: c }))];
+}
+
+function cycleCategoryBySwipe(direction) {
+  const values = getCategoryButtons().map((button) => button.value);
+  if (values.length === 0) return;
+  let index = values.indexOf(state.filters.category);
+  if (index < 0) index = 0;
+  const next = (index + direction + values.length) % values.length;
+  state.filters.category = values[next];
+  render();
 }
 
 function renderTagChips() {
@@ -289,7 +304,7 @@ function renderRows() {
         <td class="memo-cell">${escapeHtml(display.notes)}</td>
         <td>
           <div class="row-actions">
-            <button class="icon-btn add-btn edit-btn" data-action="edit" data-id="${display.id}" aria-label="編集" title="編集">
+            <button class="icon-btn edit-btn" data-action="edit" data-id="${display.id}" aria-label="編集" title="編集">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 20h4l10-10-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
@@ -476,6 +491,40 @@ function setupEvents() {
     state.filters.category = state.filters.category === selected ? "all" : selected;
     render();
   });
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchStartTime = 0;
+
+  el.tableWrap.addEventListener(
+    "touchstart",
+    (event) => {
+      if (window.innerWidth > 780) return;
+      const touch = event.changedTouches?.[0];
+      if (!touch) return;
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+      touchStartTime = Date.now();
+    },
+    { passive: true }
+  );
+
+  el.tableWrap.addEventListener(
+    "touchend",
+    (event) => {
+      if (window.innerWidth > 780) return;
+      const touch = event.changedTouches?.[0];
+      if (!touch) return;
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+      const elapsed = Date.now() - touchStartTime;
+      if (Math.abs(dx) < 50) return;
+      if (Math.abs(dy) > 36) return;
+      if (elapsed > 650) return;
+      cycleCategoryBySwipe(dx < 0 ? 1 : -1);
+    },
+    { passive: true }
+  );
 
   const onTagClick = (event) => {
     const control = event.target.closest("button[data-tag-control]");
