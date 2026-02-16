@@ -289,7 +289,11 @@ function renderRows() {
         <td class="memo-cell">${escapeHtml(display.notes)}</td>
         <td>
           <div class="row-actions">
-            <button class="icon-btn add-btn edit-btn" data-action="edit" data-id="${display.id}" aria-label="編集" title="編集">✎</button>
+            <button class="icon-btn add-btn edit-btn" data-action="edit" data-id="${display.id}" aria-label="編集" title="編集">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20h4l10-10-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
           </div>
         </td>
       </tr>`;

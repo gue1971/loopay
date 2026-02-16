@@ -260,30 +260,33 @@ button.primary {
 .table-tabs {
   flex: 0 0 auto;
   display: flex;
-  align-items: flex-end;
-  gap: 0.35rem;
-  padding: 0.34rem 0.42rem 0;
-  background: transparent;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
   overflow-x: auto;
-  min-height: 2.3rem;
+  min-height: 2.72rem;
 }
 
 .table-tabs .tab-btn {
-  border-radius: 12px 12px 0 0;
-  border: 1px solid var(--head-bg);
-  border-bottom-color: var(--head-bg);
-  height: 1.95rem;
-  padding: 0 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  height: 1.9rem;
+  padding: 0 0.84rem;
   display: inline-flex;
   align-items: center;
   background: #effcff;
-  color: #0e5f6b;
+  color: #1f6270;
+  font-size: 0.84rem;
+  font-weight: 700;
 }
 
 .table-tabs .tab-btn.active {
   background: var(--head-bg);
   color: #111111;
-  font-weight: 700;
+  border-color: var(--head-bg);
 }
 
 .table-wrap {
@@ -291,8 +294,8 @@ button.primary {
   min-height: 0;
   overflow: auto;
   background: var(--surface);
-  border: 1px solid var(--head-bg);
-  border-radius: 0 14px 14px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
 }
 
 table {
@@ -316,10 +319,10 @@ th {
   position: sticky;
   top: 0;
   z-index: 7;
-  background: var(--head-bg);
+  background: #dff4f7;
   color: #111111;
   font-weight: 700;
-  border-bottom-color: #51b6c2;
+  border-bottom-color: #bedfe4;
 }
 
 th:nth-child(1),
@@ -345,6 +348,10 @@ td:nth-child(4) {
 th:nth-child(5),
 td:nth-child(5) {
   width: 4%;
+}
+
+tbody tr:hover td {
+  background: #f8fdff;
 }
 
 .service-cell small,
@@ -383,10 +390,17 @@ td:nth-child(5) {
 .icon-btn {
   width: 1.9rem;
   height: 1.9rem;
+  min-width: 1.9rem;
+  min-height: 1.9rem;
+  aspect-ratio: 1 / 1;
   padding: 0;
-  border-radius: 999px;
-  display: inline-grid;
-  place-items: center;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 td .row-actions {
@@ -395,8 +409,13 @@ td .row-actions {
 }
 
 .edit-btn {
-  font-size: 0.96rem;
-  line-height: 1;
+  padding: 0;
+}
+
+.edit-btn svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  display: block;
 }
 
 .btn.danger,
@@ -540,7 +559,7 @@ menu {
 
 @media (max-width: 780px) {
   h1 {
-    font-size: 1.18rem;
+    font-size: 1.2rem;
   }
 
   .file-controls {
@@ -563,18 +582,18 @@ menu {
   }
 
   .summary-card h2 {
-    font-size: clamp(0.78rem, 3.4vw, 0.98rem);
+    font-size: clamp(0.88rem, 3.8vw, 1.06rem);
   }
 
   .table-tabs {
-    min-height: 2.15rem;
-    padding-top: 0.24rem;
+    min-height: 2.54rem;
+    padding: 0.36rem;
   }
 
   .table-tabs .tab-btn {
-    height: 1.84rem;
-    padding: 0 0.72rem;
-    font-size: 0.78rem;
+    height: 1.86rem;
+    padding: 0 0.76rem;
+    font-size: 0.86rem;
   }
 
   th:nth-child(3),
@@ -601,8 +620,18 @@ menu {
 
   th,
   td {
-    padding: 0.56rem 0.5rem;
-    font-size: 0.84rem;
+    padding: 0.58rem 0.5rem;
+    font-size: 0.92rem;
+  }
+
+  .chip-btn {
+    font-size: 0.87rem;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
   }
 
   .entry-modal {
@@ -628,7 +657,7 @@ menu {
 
 @media (max-width: 520px) {
   .summary-card h2 {
-    font-size: clamp(0.74rem, 3.6vw, 0.9rem);
+    font-size: clamp(0.84rem, 3.8vw, 0.96rem);
   }
 
   .grid-2 {
@@ -636,7 +665,9 @@ menu {
   }
 
   .icon-btn {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.86rem;
+    height: 1.86rem;
+    min-width: 1.86rem;
+    min-height: 1.86rem;
   }
 }
