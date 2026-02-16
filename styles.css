@@ -607,6 +607,7 @@ menu {
   .table-tabs {
     min-height: 2.54rem;
     padding: 0.36rem;
+    justify-content: center;
   }
 
   .table-tabs .tab-btn {
