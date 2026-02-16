@@ -1,0 +1,972 @@
+{
+  "schemaVersion": 1,
+  "exportedAt": "2026-02-16T13:36:28.417Z",
+  "subscriptions": [
+    {
+      "id": "seed-1",
+      "serviceName": "中国新聞",
+      "providerName": "中国新聞社",
+      "category": "生活",
+      "tags": [
+        "読み物"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 3900,
+      "monthlyCost": 3900,
+      "yearlyCost": 46800,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "https://www.chugoku-np.co.jp/",
+      "createdAt": "2026-02-16T02:41:44.534Z",
+      "updatedAt": "2026-02-16T13:16:16.694Z"
+    },
+    {
+      "id": "seed-2",
+      "serviceName": "NHK受信料",
+      "providerName": "NHK",
+      "category": "生活",
+      "tags": [
+        "公共料金"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 21765,
+      "monthlyCost": 1813.75,
+      "yearlyCost": 21765,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "12月15日 12-11月分",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T08:39:17.769Z"
+    },
+    {
+      "id": "seed-3",
+      "serviceName": "従量電灯A",
+      "providerName": "中国電力",
+      "category": "生活",
+      "tags": [
+        "公共料金",
+        "光熱費"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 17000,
+      "monthlyCost": 17000,
+      "yearlyCost": 204000,
+      "accountIdentifier": "5100-50541824-1",
+      "paymentMethod": "オリコカード",
+      "notes": "",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T11:50:04.603Z"
+    },
+    {
+      "id": "seed-4",
+      "serviceName": "ガス料金",
+      "providerName": "アストモスリテイリング",
+      "category": "生活",
+      "tags": [
+        "公共料金",
+        "光熱費"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 11000,
+      "monthlyCost": 11000,
+      "yearlyCost": 132000,
+      "accountIdentifier": "4001-110-05325652-0000",
+      "paymentMethod": "オリコカード",
+      "notes": "https://ener-navi.com/GasUser/PreRegist gue1971@gmail.comでログイン",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T11:50:25.634Z"
+    },
+    {
+      "id": "seed-5",
+      "serviceName": "水道",
+      "providerName": "広島市",
+      "category": "生活",
+      "tags": [
+        "公共料金"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 3860,
+      "monthlyCost": 3860,
+      "yearlyCost": 46320,
+      "accountIdentifier": "",
+      "paymentMethod": "ゆうちょ・自払",
+      "notes": "7720円/2ヶ月",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T11:51:38.142Z"
+    },
+    {
+      "id": "seed-6",
+      "serviceName": "THE 家財の保険",
+      "providerName": "損保ジャパン",
+      "category": "生活",
+      "tags": [
+        "損害保険"
+      ],
+      "billingCycle": "biyearly",
+      "amountPerCycle": 24090,
+      "monthlyCost": 1003.75,
+      "yearlyCost": 12045,
+      "accountIdentifier": "",
+      "paymentMethod": "振込",
+      "notes": "2026/01/05〜2028/01/05 地震保険なし",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T08:38:14.102Z"
+    },
+    {
+      "id": "seed-7",
+      "serviceName": "ソニー損保の自動車保険",
+      "providerName": "ソニー損保",
+      "category": "生活",
+      "tags": [
+        "損害保険",
+        "自動車"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 21020,
+      "monthlyCost": 1751.6666666666667,
+      "yearlyCost": 21020,
+      "accountIdentifier": "R523H7R6",
+      "paymentMethod": "オリコカード",
+      "notes": "https://www.sonysonpo.co.jp",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T08:37:55.162Z"
+    },
+    {
+      "id": "seed-8",
+      "serviceName": "軽自動車税",
+      "providerName": "広島市",
+      "category": "生活",
+      "tags": [
+        "税金",
+        "自動車"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 12900,
+      "monthlyCost": 1075,
+      "yearlyCost": 12900,
+      "accountIdentifier": "",
+      "paymentMethod": "ゆうちょ・自払",
+      "notes": "5月末日",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T08:38:04.680Z"
+    },
+    {
+      "id": "seed-9",
+      "serviceName": "門徒会費",
+      "providerName": "久蔵寺",
+      "category": "生活",
+      "tags": [
+        "交際費"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 5000,
+      "monthlyCost": 416.6666666666667,
+      "yearlyCost": 5000,
+      "accountIdentifier": "",
+      "paymentMethod": "ゆうちょ・振込",
+      "notes": "門徒会費5000円だけか墓地管理費もあった気がするのだが",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T13:29:27.918Z"
+    },
+    {
+      "id": "seed-10",
+      "serviceName": "Amazonプライム",
+      "providerName": "アマゾン",
+      "category": "生活",
+      "tags": [
+        "動画配信"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 5900,
+      "monthlyCost": 491.6666666666667,
+      "yearlyCost": 5900,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "5月14日",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T13:11:08.225Z"
+    },
+    {
+      "id": "seed-11",
+      "serviceName": "auひかり \"au one net\"",
+      "providerName": "KDDI",
+      "category": "生活",
+      "tags": [
+        "通信料"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 4733,
+      "monthlyCost": 4733,
+      "yearlyCost": 56796,
+      "accountIdentifier": "gue1971",
+      "paymentMethod": "オリコカード",
+      "notes": "13日 https://www.au.com/my-au/　サポートID　4733+α円",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T08:54:49.218Z"
+    },
+    {
+      "id": "seed-12",
+      "serviceName": "合理的シンプル290プラン",
+      "providerName": "日本通信",
+      "category": "生活",
+      "tags": [
+        "通信料"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 293,
+      "monthlyCost": 293,
+      "yearlyCost": 3516,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "https://mypage.bmobile.ne.jp/　293+α円",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T08:54:29.245Z"
+    },
+    {
+      "id": "seed-13",
+      "serviceName": "LINEMO ベストプラン",
+      "providerName": "LINEMO",
+      "category": "生活",
+      "tags": [
+        "通信料"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 2090,
+      "monthlyCost": 2090,
+      "yearlyCost": 25080,
+      "accountIdentifier": "party6473115",
+      "paymentMethod": "オリコカード",
+      "notes": "3GBまで990 10GBまで2090",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T08:26:46.494Z"
+    },
+    {
+      "id": "seed-14",
+      "serviceName": "イオンモバイル 音声6GBプラン",
+      "providerName": "イオンデジタルワールド",
+      "category": "生活",
+      "tags": [
+        "通信料"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 1411,
+      "monthlyCost": 1411,
+      "yearlyCost": 16932,
+      "accountIdentifier": "002186824",
+      "paymentMethod": "オリコカード",
+      "notes": "次男 1411+α円　12日",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T08:27:19.906Z"
+    },
+    {
+      "id": "seed-15",
+      "serviceName": "ChatGPT Plus",
+      "providerName": "OpenAI",
+      "category": "娯楽",
+      "tags": [
+        "AI"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 3200,
+      "monthlyCost": 3200,
+      "yearlyCost": 38400,
+      "accountIdentifier": "次男のID",
+      "paymentMethod": "オリコカード",
+      "notes": "＄20/月 退会はサイトの設定 https://chat.openai.com/",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T06:55:50.613Z"
+    },
+    {
+      "id": "seed-16",
+      "serviceName": "整水器交換カートリッジ",
+      "providerName": "パナソニック",
+      "category": "生活",
+      "tags": [],
+      "billingCycle": "biyearly",
+      "amountPerCycle": 8400,
+      "monthlyCost": 350,
+      "yearlyCost": 4200,
+      "accountIdentifier": "",
+      "paymentMethod": "",
+      "notes": "1本8400円くらい",
+      "createdAt": "2026-02-16T02:41:44.535Z",
+      "updatedAt": "2026-02-16T08:40:59.207Z"
+    },
+    {
+      "id": "seed-17",
+      "serviceName": "Google AI Pro（2TB）",
+      "providerName": "Google",
+      "category": "娯楽",
+      "tags": [
+        "AI",
+        "クラウドストレージ"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 29000,
+      "monthlyCost": 2416.6666666666665,
+      "yearlyCost": 29000,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "2026-2-16に年払い変更手続き",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T07:13:00.010Z"
+    },
+    {
+      "id": "seed-18",
+      "serviceName": "ChatGPT Plus",
+      "providerName": "OpenAI",
+      "category": "娯楽",
+      "tags": [
+        "AI"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 3200,
+      "monthlyCost": 3200,
+      "yearlyCost": 38400,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "4日 ＄20/月 退会はサイトの設定 https://chat.openai.com/",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T07:14:12.162Z"
+    },
+    {
+      "id": "seed-19",
+      "serviceName": "YouTube Premium ファミリー",
+      "providerName": "GooglePlayコンテンツ",
+      "category": "娯楽",
+      "tags": [
+        "動画配信"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 2280,
+      "monthlyCost": 2280,
+      "yearlyCost": 27360,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "13日",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T13:09:38.058Z"
+    },
+    {
+      "id": "seed-20",
+      "serviceName": "iCloud+（200GB）",
+      "providerName": "Apple",
+      "category": "娯楽",
+      "tags": [
+        "クラウドストレージ"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 450,
+      "monthlyCost": 450,
+      "yearlyCost": 5400,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "退会はApple端末の設定で",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T07:01:16.146Z"
+    },
+    {
+      "id": "seed-21",
+      "serviceName": "スタディサプリ",
+      "providerName": "リクルート",
+      "category": "娯楽",
+      "tags": [
+        "動画配信"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 10780,
+      "monthlyCost": 898.3333333333334,
+      "yearlyCost": 10780,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "4月1日 2020-2-18値上：新規契約は21780/年",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T07:47:41.905Z"
+    },
+    {
+      "id": "seed-22",
+      "serviceName": "NEWS PICKS プレミアム",
+      "providerName": "NEWS PICKS",
+      "category": "娯楽",
+      "tags": [
+        "読み物",
+        "動画配信"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 15000,
+      "monthlyCost": 1250,
+      "yearlyCost": 15000,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "再加入は18400円（2023.2値上げ）更新日：10月23日",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T13:15:51.403Z"
+    },
+    {
+      "id": "seed-23",
+      "serviceName": "一口馬主DB プレミアム会員",
+      "providerName": "Plus New",
+      "category": "娯楽",
+      "tags": [
+        "競馬"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 497,
+      "monthlyCost": 497,
+      "yearlyCost": 5964,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "1日 https://www.umadb.com/member/premium/ プレミアム会員設定から解約",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T12:44:14.214Z"
+    },
+    {
+      "id": "seed-24",
+      "serviceName": "一口馬主クラブ会費",
+      "providerName": "キャロットクラブ",
+      "category": "娯楽",
+      "tags": [
+        "競馬",
+        "一口馬主会費"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 3300,
+      "monthlyCost": 3300,
+      "yearlyCost": 39600,
+      "accountIdentifier": "26678",
+      "paymentMethod": "dNEOBANK",
+      "notes": "27日 https://carrotclub.net/",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T12:44:52.293Z"
+    },
+    {
+      "id": "seed-25",
+      "serviceName": "競走馬維持費",
+      "providerName": "キャロットクラブ",
+      "category": "娯楽",
+      "tags": [
+        "競馬",
+        "競走馬維持費"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 10500,
+      "monthlyCost": 10500,
+      "yearlyCost": 126000,
+      "accountIdentifier": "26678",
+      "paymentMethod": "dNEOBANK",
+      "notes": "7口 ブレスワード パッセージピーク(2) ガルディエンヌ クラシックリディア24 レシステンシア24 ファシネートゼット24",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T07:26:43.336Z"
+    },
+    {
+      "id": "seed-26",
+      "serviceName": "一口馬主クラブ会費",
+      "providerName": "シルクホースクラブ",
+      "category": "娯楽",
+      "tags": [
+        "競馬",
+        "一口馬主会費"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 3300,
+      "monthlyCost": 3300,
+      "yearlyCost": 39600,
+      "accountIdentifier": "32770",
+      "paymentMethod": "dNEOBANK",
+      "notes": "27日 https://www.silkhorseclub.jp/",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T12:45:20.112Z"
+    },
+    {
+      "id": "seed-27",
+      "serviceName": "競走馬維持費",
+      "providerName": "シルクホースクラブ",
+      "category": "娯楽",
+      "tags": [
+        "競馬",
+        "競走馬維持費"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 13500,
+      "monthlyCost": 13500,
+      "yearlyCost": 162000,
+      "accountIdentifier": "32770",
+      "paymentMethod": "dNEOBANK",
+      "notes": "9口 プリュノワール エストレヤデベレン フォンデネージュ(5) ベリルアンヴォル ジルファノーガ",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T07:29:12.321Z"
+    },
+    {
+      "id": "seed-28",
+      "serviceName": "一口馬主クラブ会費",
+      "providerName": "ウインレーシングクラブ",
+      "category": "娯楽",
+      "tags": [
+        "競馬",
+        "一口馬主会費"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 2090,
+      "monthlyCost": 2090,
+      "yearlyCost": 25080,
+      "accountIdentifier": "7186",
+      "paymentMethod": "dNEOBANK",
+      "notes": "27日 https://www.win-rc.co.jp/site/top.php",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T12:45:45.925Z"
+    },
+    {
+      "id": "seed-29",
+      "serviceName": "競走馬維持費",
+      "providerName": "ウインレーシングクラブ",
+      "category": "娯楽",
+      "tags": [
+        "競馬",
+        "競走馬維持費"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 4500,
+      "monthlyCost": 4500,
+      "yearlyCost": 54000,
+      "accountIdentifier": "7186",
+      "paymentMethod": "dNEOBANK",
+      "notes": "3口 ウイングリフィス ウインサルーテ ウインアルカンナ24",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T07:29:47.037Z"
+    },
+    {
+      "id": "seed-30",
+      "serviceName": "一口馬主クラブ会費",
+      "providerName": "東京サラブレッドクラブ",
+      "category": "娯楽",
+      "tags": [
+        "競馬",
+        "一口馬主会費"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 3080,
+      "monthlyCost": 3080,
+      "yearlyCost": 36960,
+      "accountIdentifier": "35763",
+      "paymentMethod": "dNEOBANK",
+      "notes": "28日 https://www.tokyo-tc.com/",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T12:46:12.536Z"
+    },
+    {
+      "id": "seed-31",
+      "serviceName": "競走馬維持費",
+      "providerName": "東京サラブレッドクラブ",
+      "category": "娯楽",
+      "tags": [
+        "競馬",
+        "競走馬維持費"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 21000,
+      "monthlyCost": 21000,
+      "yearlyCost": 252000,
+      "accountIdentifier": "35763",
+      "paymentMethod": "dNEOBANK",
+      "notes": "14口 ルージュミステリオ レッドベルダンス ルージュビバーチェ(2) ルージュウラヌス(2) ルージュソムニウム ルージュアリスタ(2) レッドレグルスレッドゲレーロ レッドアブソルート  レッドシーカー ルージュフラッパー",
+      "createdAt": "2026-02-16T02:41:44.536Z",
+      "updatedAt": "2026-02-16T07:36:17.065Z"
+    },
+    {
+      "id": "seed-32",
+      "serviceName": "普通養老保険（60歳満期）",
+      "providerName": "郵便局",
+      "category": "保険",
+      "tags": [
+        "生命保険"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 30495,
+      "monthlyCost": 2541.25,
+      "yearlyCost": 30495,
+      "accountIdentifier": "51-29-6796033",
+      "paymentMethod": "ゆうちょ・自払",
+      "notes": "夫 払込期間終期：2026年2月",
+      "createdAt": "2026-02-16T02:41:44.537Z",
+      "updatedAt": "2026-02-16T07:02:22.673Z"
+    },
+    {
+      "id": "seed-33",
+      "serviceName": "特別終身保険（60歳払込済）",
+      "providerName": "郵便局",
+      "category": "保険",
+      "tags": [
+        "生命保険"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 66172,
+      "monthlyCost": 5514.333333333333,
+      "yearlyCost": 66172,
+      "accountIdentifier": "51-29-8916522",
+      "paymentMethod": "ゆうちょ・自払",
+      "notes": "妻 払込期間終期：2032年2月",
+      "createdAt": "2026-02-16T02:41:44.537Z",
+      "updatedAt": "2026-02-16T05:45:41.854Z"
+    },
+    {
+      "id": "seed-34",
+      "serviceName": "普通養老保険（60歳満期）",
+      "providerName": "かんぽ生命",
+      "category": "保険",
+      "tags": [
+        "生命保険"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 116283,
+      "monthlyCost": 9690.25,
+      "yearlyCost": 116283,
+      "accountIdentifier": "51-51-0886750",
+      "paymentMethod": "ゆうちょ・自払",
+      "notes": "妻 払込期間終期：2031年8月",
+      "createdAt": "2026-02-16T02:41:44.537Z",
+      "updatedAt": "2026-02-16T06:42:39.659Z"
+    },
+    {
+      "id": "seed-35",
+      "serviceName": "ずっとあい終身生命",
+      "providerName": "コープ共済連",
+      "category": "保険",
+      "tags": [
+        "生命保険"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 14200,
+      "monthlyCost": 14200,
+      "yearlyCost": 170400,
+      "accountIdentifier": "00139625",
+      "paymentMethod": "ゆうちょ・自払",
+      "notes": "次男 払込期間終期：2061年6月 生協代金",
+      "createdAt": "2026-02-16T02:41:44.537Z",
+      "updatedAt": "2026-02-16T06:40:38.378Z"
+    },
+    {
+      "id": "seed-36",
+      "serviceName": "ずっとあい終身医療",
+      "providerName": "コープ共済連",
+      "category": "保険",
+      "tags": [
+        "医療保険"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 2395,
+      "monthlyCost": 2395,
+      "yearlyCost": 28740,
+      "accountIdentifier": "00630324",
+      "paymentMethod": "ゆうちょ・自払",
+      "notes": "次男 払込期間終期：2061年6月 生協代金",
+      "createdAt": "2026-02-16T02:41:44.537Z",
+      "updatedAt": "2026-02-16T06:41:50.835Z"
+    },
+    {
+      "id": "seed-37",
+      "serviceName": "がん保険ｆ（フォルテ）",
+      "providerName": "アフラック",
+      "category": "保険",
+      "tags": [
+        "がん保険"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 77936,
+      "monthlyCost": 6494.666666666667,
+      "yearlyCost": 77936,
+      "accountIdentifier": "9847-9622-469",
+      "paymentMethod": "ゆうちょ・自払",
+      "notes": "妻 払込期間終期：2031年7月",
+      "createdAt": "2026-02-16T02:41:44.537Z",
+      "updatedAt": "2026-02-16T06:30:07.910Z"
+    },
+    {
+      "id": "seed-38",
+      "serviceName": "がん保険ｆ（フォルテ）",
+      "providerName": "アフラック",
+      "category": "保険",
+      "tags": [
+        "がん保険"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 82113,
+      "monthlyCost": 6842.75,
+      "yearlyCost": 82113,
+      "accountIdentifier": "9847-9622-434",
+      "paymentMethod": "オリコカード",
+      "notes": "夫  払込期間終期：2031年7月",
+      "createdAt": "2026-02-16T02:41:44.537Z",
+      "updatedAt": "2026-02-16T06:27:15.823Z"
+    },
+    {
+      "id": "seed-39",
+      "serviceName": "がん保険ｆ（フォルテ）",
+      "providerName": "アフラック",
+      "category": "保険",
+      "tags": [
+        "がん保険"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 30036,
+      "monthlyCost": 2503,
+      "yearlyCost": 30036,
+      "accountIdentifier": "9847-9622-451",
+      "paymentMethod": "オリコカード",
+      "notes": "長男 払込期間終期：2057年7月",
+      "createdAt": "2026-02-16T02:41:44.537Z",
+      "updatedAt": "2026-02-16T06:24:05.992Z"
+    },
+    {
+      "id": "seed-40",
+      "serviceName": "がん保険ｆ（フォルテ）",
+      "providerName": "アフラック",
+      "category": "保険",
+      "tags": [
+        "がん保険"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 26880,
+      "monthlyCost": 2240,
+      "yearlyCost": 26880,
+      "accountIdentifier": "9847-9622-442",
+      "paymentMethod": "オリコカード",
+      "notes": "次男 払込期間終期：2061年7月",
+      "createdAt": "2026-02-16T02:41:44.537Z",
+      "updatedAt": "2026-02-16T06:25:56.794Z"
+    },
+    {
+      "id": "seed-41",
+      "serviceName": "アフラックの終身保険",
+      "providerName": "アフラック",
+      "category": "保険",
+      "tags": [
+        "生命保険"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 7968,
+      "monthlyCost": 7968,
+      "yearlyCost": 95616,
+      "accountIdentifier": "5987-1467-204",
+      "paymentMethod": "オリコカード",
+      "notes": "夫 払込期間終期：2032年1月",
+      "createdAt": "2026-02-16T02:41:44.537Z",
+      "updatedAt": "2026-02-16T06:33:25.981Z"
+    },
+    {
+      "id": "seed-42",
+      "serviceName": "積立NISA",
+      "providerName": "楽天証券",
+      "category": "投資",
+      "tags": [
+        "投資"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 50000,
+      "monthlyCost": 50000,
+      "yearlyCost": 600000,
+      "accountIdentifier": "",
+      "paymentMethod": "楽天カード",
+      "notes": "eMAXIS Slim 米国株式(S&P500)",
+      "createdAt": "2026-02-16T02:41:44.537Z",
+      "updatedAt": "2026-02-16T05:26:12.114Z"
+    },
+    {
+      "id": "seed-43",
+      "serviceName": "iDeCo",
+      "providerName": "国民年金基金連合会",
+      "category": "投資",
+      "tags": [
+        "投資"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 23000,
+      "monthlyCost": 23000,
+      "yearlyCost": 276000,
+      "accountIdentifier": "",
+      "paymentMethod": "楽天銀行・自払",
+      "notes": "たわらノーロード 先進国株式",
+      "createdAt": "2026-02-16T02:41:44.537Z",
+      "updatedAt": "2026-02-16T05:26:43.282Z"
+    },
+    {
+      "id": "e1e2edd6-b44c-4871-a8f7-9fe9f2fee05d",
+      "serviceName": "普通養老保険（60歳満期）",
+      "providerName": "郵便局",
+      "category": "保険",
+      "tags": [
+        "生命保険"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 30495,
+      "monthlyCost": 2541.25,
+      "yearlyCost": 30495,
+      "accountIdentifier": "51-29-6796355",
+      "paymentMethod": "ゆうちょ・自払",
+      "notes": "夫 払込期間終期：2026年2月",
+      "createdAt": "2026-02-16T05:53:09.370Z",
+      "updatedAt": "2026-02-16T06:17:56.126Z"
+    },
+    {
+      "id": "954f9ed9-edbc-4e18-bcc4-a8d2e48792a1",
+      "serviceName": "特別終身保険（60歳払込済）",
+      "providerName": "郵便局",
+      "category": "保険",
+      "tags": [
+        "生命保険"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 30613,
+      "monthlyCost": 2551.0833333333335,
+      "yearlyCost": 30613,
+      "accountIdentifier": "51-29-6796363",
+      "paymentMethod": "ゆうちょ・自払",
+      "notes": "夫 払込期間終期：2031年2月",
+      "createdAt": "2026-02-16T06:17:28.322Z",
+      "updatedAt": "2026-02-16T06:17:28.322Z"
+    },
+    {
+      "id": "fad5ed30-d8e6-4a96-8e8f-1d9aa0cdc08b",
+      "serviceName": "特別終身保険（60歳払込済）",
+      "providerName": "郵便局",
+      "category": "保険",
+      "tags": [
+        "生命保険"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 30613,
+      "monthlyCost": 2551.0833333333335,
+      "yearlyCost": 30613,
+      "accountIdentifier": "51-29-6796371",
+      "paymentMethod": "ゆうちょ・自払",
+      "notes": "夫 払込期間終期：2031年2月",
+      "createdAt": "2026-02-16T06:19:50.994Z",
+      "updatedAt": "2026-02-16T06:20:06.745Z"
+    },
+    {
+      "id": "d73184e9-5d00-4fca-b4c2-39f46437cb78",
+      "serviceName": "国民年金",
+      "providerName": "日本年金機構",
+      "category": "生活",
+      "tags": [
+        "年金"
+      ],
+      "billingCycle": "biyearly",
+      "amountPerCycle": 408150,
+      "monthlyCost": 17006.25,
+      "yearlyCost": 204075,
+      "accountIdentifier": "",
+      "paymentMethod": "ゆうちょ・自払",
+      "notes": "2025年4月30日 令和7年8年 夫",
+      "createdAt": "2026-02-16T12:02:01.187Z",
+      "updatedAt": "2026-02-16T12:02:01.187Z"
+    },
+    {
+      "id": "79a6b204-c022-419e-91e3-06477a6f867e",
+      "serviceName": "国民年金",
+      "providerName": "日本年金機構",
+      "category": "生活",
+      "tags": [
+        "年金"
+      ],
+      "billingCycle": "biyearly",
+      "amountPerCycle": 417370,
+      "monthlyCost": 17390.416666666668,
+      "yearlyCost": 208685,
+      "accountIdentifier": "",
+      "paymentMethod": "ゆうちょ・自払",
+      "notes": "2025年4月30日 令和7年8年 次男 付加保険料込 9220円",
+      "createdAt": "2026-02-16T12:03:22.320Z",
+      "updatedAt": "2026-02-16T12:03:55.426Z"
+    },
+    {
+      "id": "1e6be809-b7e5-426d-a7b0-5f1ba2a1ed10",
+      "serviceName": "ガソリン代",
+      "providerName": "トヨタファイナンス",
+      "category": "生活",
+      "tags": [
+        "自動車"
+      ],
+      "billingCycle": "yearly",
+      "amountPerCycle": 7200,
+      "monthlyCost": 600,
+      "yearlyCost": 7200,
+      "accountIdentifier": "",
+      "paymentMethod": "エネオスカード",
+      "notes": "3600/6ヶ月",
+      "createdAt": "2026-02-16T12:14:30.685Z",
+      "updatedAt": "2026-02-16T13:36:03.021Z"
+    },
+    {
+      "id": "efd9d2a8-61db-404b-bb52-67c5c5dabd2c",
+      "serviceName": "JRA-VAN Data Lab.",
+      "providerName": "JRAシステムサービス",
+      "category": "娯楽",
+      "tags": [
+        "競馬"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 2090,
+      "monthlyCost": 2090,
+      "yearlyCost": 25080,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "1日 https://jra-van.jp/ でご利用状況の確認から自動継続停止",
+      "createdAt": "2026-02-16T12:36:20.859Z",
+      "updatedAt": "2026-02-16T12:39:22.813Z"
+    },
+    {
+      "id": "4d2dd7c7-c85e-4846-9736-f733588fc9c3",
+      "serviceName": "JRAレーシングビュアー",
+      "providerName": "JRAシステムサービス",
+      "category": "娯楽",
+      "tags": [
+        "競馬"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 550,
+      "monthlyCost": 550,
+      "yearlyCost": 6600,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "1日 https://jra-van.jp/ でご利用状況の確認から自動継続停止",
+      "createdAt": "2026-02-16T12:37:42.707Z",
+      "updatedAt": "2026-02-16T12:39:31.459Z"
+    },
+    {
+      "id": "126efbf8-bc25-4b93-ade0-9e0703943f3f",
+      "serviceName": "Kindle Unlimited",
+      "providerName": "アマゾン",
+      "category": "娯楽",
+      "tags": [
+        "読み物"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 980,
+      "monthlyCost": 980,
+      "yearlyCost": 11760,
+      "accountIdentifier": "gue1971@gmail.com",
+      "paymentMethod": "オリコカード",
+      "notes": "3日 https://www.amazon.co.jp/kindle-dbs/ku/ku-centralで解約",
+      "createdAt": "2026-02-16T13:15:39.591Z",
+      "updatedAt": "2026-02-16T13:20:49.279Z"
+    },
+    {
+      "id": "1f4ad095-9ac8-419d-9973-761ecb87e6f2",
+      "serviceName": "家賃",
+      "providerName": "ナカムラノボル",
+      "category": "生活",
+      "tags": [
+        "住居費"
+      ],
+      "billingCycle": "monthly",
+      "amountPerCycle": 83000,
+      "monthlyCost": 83000,
+      "yearlyCost": 996000,
+      "accountIdentifier": "",
+      "paymentMethod": "dNEOBANK・自動振込",
+      "notes": "31日 休日の場合は前営業日",
+      "createdAt": "2026-02-16T13:25:44.025Z",
+      "updatedAt": "2026-02-16T13:35:29.061Z"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Loopay icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9f6ff" />
+      <stop offset="1" stop-color="#c7f0df" />
+    </linearGradient>
+    <linearGradient id="coin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#29b37f" />
+      <stop offset="1" stop-color="#0b6e4f" />
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="464" height="464" rx="120" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="124" fill="url(#coin)"/>
+  <path d="M200 256c0-33 27-60 60-60h52" fill="none" stroke="#fff" stroke-width="30" stroke-linecap="round"/>
+  <path d="M312 248l36-52" fill="none" stroke="#fff" stroke-width="30" stroke-linecap="round"/>
+  <circle cx="190" cy="206" r="26" fill="#ffffff"/>
+  <circle cx="324" cy="324" r="20" fill="#ffffff" opacity="0.9"/>
+</svg>

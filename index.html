@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loopay</title>
+    <meta name="theme-color" content="#0b6e4f" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Loopay" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon-1024.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./icons/icon-1024.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="startupOverlay" class="startup-overlay">
+      <div class="startup-card">
+        <h1>Loopay</h1>
+        <p>起動時にJSONファイルを選択してデータを読み込みます。</p>
+        <div class="startup-actions">
+          <label class="btn primary" for="jsonFileInput">読込</label>
+          <button id="createNewStartBtn" class="btn">新規</button>
+        </div>
+      </div>
+    </div>
+
+    <header class="app-header">
+      <div>
+        <h1>Loopay</h1>
+      </div>
+      <div class="file-controls">
+        <input id="jsonFileInput" type="file" accept="application/json,.json" hidden />
+        <label class="btn btn-accent-soft file-btn" for="jsonFileInput" title="Import" aria-label="Import">Import</label>
+        <button id="saveJsonBtn" class="btn btn-accent-soft file-btn" title="Export" aria-label="Export">Export</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="summary-grid">
+        <article class="summary-card">
+          <h2 id="monthlyTotal">月額¥0</h2>
+        </article>
+        <article class="summary-card">
+          <h2 id="yearlyTotal">年額¥0</h2>
+        </article>
+      </section>
+
+      <section class="toolbar">
+        <details id="tagsPanel" class="tags-panel">
+          <summary>
+            <div id="tagChips" class="chips tags-chips"></div>
+          </summary>
+        </details>
+      </section>
+
+      <section class="table-panel">
+        <div id="categoryTabs" class="tabs table-tabs"></div>
+        <div class="table-wrap linked">
+          <table>
+            <thead>
+              <tr>
+                <th>サービス</th>
+                <th>月額 / 年額</th>
+                <th>契約ID / 支払方法</th>
+                <th>メモ</th>
+                <th class="actions-head">
+                  <button id="newBtn" class="icon-btn add-btn" title="追加" aria-label="追加">＋</button>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="subscriptionRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="entryModal" class="entry-modal">
+      <form id="entryForm" method="dialog">
+        <div class="modal-title-row">
+          <h3 id="modalTitle">サブスク登録</h3>
+          <small id="modalUpdatedAt" class="modal-updated"></small>
+        </div>
+        <input type="hidden" id="entryId" />
+
+        <label>サービス名
+          <input id="serviceName" required />
+        </label>
+
+        <label>提供元
+          <input id="providerName" required />
+        </label>
+
+        <div class="grid-2">
+          <label>カテゴリ
+            <select id="category" required>
+              <option value="生活">生活</option>
+              <option value="娯楽">娯楽</option>
+              <option value="保険">保険</option>
+              <option value="投資">投資</option>
+            </select>
+          </label>
+
+          <label>タグ
+            <input id="tags" placeholder="通信, 固定費" />
+          </label>
+        </div>
+
+        <div class="grid-2">
+          <label>サイクル
+            <select id="billingCycle" required>
+              <option value="monthly">月額</option>
+              <option value="yearly">年額</option>
+              <option value="biyearly">2年</option>
+            </select>
+          </label>
+
+          <label>請求金額
+            <input id="billingAmount" type="number" min="0" step="1" required />
+          </label>
+        </div>
+
+        <div class="grid-2">
+          <label>ID
+            <input id="accountIdentifier" />
+          </label>
+
+          <label>支払方法
+            <select id="paymentMethod">
+              <option value="">未設定</option>
+              <option value="オリコカード">オリコカード</option>
+              <option value="エネオスカード">エネオスカード</option>
+              <option value="楽天カード">楽天カード</option>
+              <option value="dNEOBANK">dNEOBANK</option>
+              <option value="dNEOBANK・自動振込">dNEOBANK・自動振込</option>
+              <option value="楽天銀行・自払">楽天銀行・自払</option>
+              <option value="ゆうちょ・自払">ゆうちょ・自払</option>
+              <option value="ゆうちょ・振込">ゆうちょ・振込</option>
+              <option value="振込">振込</option>
+              <option value="住信SBIネット銀行">住信SBIネット銀行</option>
+            </select>
+          </label>
+        </div>
+
+        <label>メモ
+          <textarea id="notes" rows="3"></textarea>
+        </label>
+
+        <p id="costPreview" class="cost-preview">月額換算: ¥0 / 年額換算: ¥0</p>
+
+        <menu>
+          <button type="button" id="deleteInModalBtn" class="btn danger" hidden>削除</button>
+          <button type="button" id="cancelModalBtn" class="btn">キャンセル</button>
+          <button type="submit" class="btn primary">保存</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <template id="mobileCardTemplate">
+      <article class="mobile-card"></article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

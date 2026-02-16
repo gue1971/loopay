@@ -1,0 +1,23 @@
+{
+  "name": "Loopay",
+  "short_name": "Loopay",
+  "description": "定期支払いを管理するローカルWebアプリ",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#0b6e4f",
+  "icons": [
+    {
+      "src": "./icons/icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/maskable-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
