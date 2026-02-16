@@ -31,8 +31,18 @@
       </div>
       <div class="file-controls">
         <input id="jsonFileInput" type="file" accept="application/json,.json" hidden />
-        <label class="btn btn-accent-soft file-btn" for="jsonFileInput" title="Import" aria-label="Import">Import</label>
-        <button id="saveJsonBtn" class="btn btn-accent-soft file-btn" title="Export" aria-label="Export">Export</button>
+        <label class="btn btn-accent-soft file-btn icon-only" for="jsonFileInput" title="Import" aria-label="Import">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4v10m0 0l4-4m-4 4l-4-4M5 16v3h14v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="sr-only">Import</span>
+        </label>
+        <button id="saveJsonBtn" class="btn btn-accent-soft file-btn icon-only" title="Export" aria-label="Export">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 20V10m0 0l4 4m-4-4l-4 4M5 8V5h14v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="sr-only">Export</span>
+        </button>
       </div>
     </header>
 

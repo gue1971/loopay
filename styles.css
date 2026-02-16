@@ -60,9 +60,13 @@ textarea {
   background: rgba(243, 255, 251, 0.92);
   backdrop-filter: blur(10px);
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.65rem;
+}
+
+.app-header > div:first-child {
+  min-width: 0;
 }
 
 h1 {
@@ -72,6 +76,8 @@ h1 {
   letter-spacing: 0.03em;
   color: #0f2b3b;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .file-controls {
@@ -79,6 +85,7 @@ h1 {
   align-items: center;
   gap: 0.4rem;
   min-width: max-content;
+  flex-shrink: 0;
 }
 
 .container {
@@ -196,15 +203,34 @@ button {
 }
 
 .file-btn {
-  min-width: 4.4rem;
-  height: 1.82rem;
-  padding: 0 0.5rem;
+  width: 1.9rem;
+  min-width: 1.9rem;
+  height: 1.9rem;
+  padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
   white-space: nowrap;
   font-size: 0.78rem;
+  border-radius: 999px;
+}
+
+.file-btn svg {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .btn-accent-soft,
@@ -522,8 +548,9 @@ menu {
   }
 
   .file-btn {
-    min-width: 4.25rem;
-    height: 1.74rem;
+    width: 1.78rem;
+    min-width: 1.78rem;
+    height: 1.78rem;
     font-size: 0.73rem;
   }
 
@@ -600,17 +627,6 @@ menu {
 }
 
 @media (max-width: 520px) {
-  .app-header {
-    grid-template-columns: 1fr;
-    justify-items: start;
-  }
-
-  .file-controls {
-    justify-self: end;
-    width: 100%;
-    justify-content: flex-end;
-  }
-
   .summary-card h2 {
     font-size: clamp(0.74rem, 3.6vw, 0.9rem);
   }
