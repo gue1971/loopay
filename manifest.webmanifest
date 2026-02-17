@@ -1,8 +1,10 @@
 {
   "name": "Loopay",
   "short_name": "Loopay",
-  "description": "定期支払いを管理するローカルWebアプリ",
-  "start_url": ".",
+  "description": "定期支出管理アプリ",
+  "id": "/loopay/",
+  "start_url": "/loopay/",
+  "scope": "/loopay/",
   "display": "standalone",
   "background_color": "#f4f7fb",
   "theme_color": "#0b6e4f",
