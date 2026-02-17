@@ -352,6 +352,7 @@ function renderRows() {
         <td class="cost-cell">
           <div class="cost-line"><strong>${formatRoundedYenText(display.monthlyCost)}</strong></div>
           <div class="cost-line"><span>${formatYenText(display.yearlyCost)}</span></div>
+          <div class="cost-line"><small>${cyclePayLabel(display.billingCycle)}</small></div>
         </td>
         <td class="idpay-cell"><span>${escapeHtml(display.accountIdentifier)}</span><br><small>${escapeHtml(display.paymentMethod)}</small></td>
         <td class="memo-cell">${formatMultilineHtml(display.notes)}</td>
