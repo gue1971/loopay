@@ -87,7 +87,6 @@
       <form id="entryForm" method="dialog">
         <div class="modal-title-row">
           <h3 id="modalTitle">サブスク登録</h3>
-          <small id="modalUpdatedAt" class="modal-updated"></small>
         </div>
         <input type="hidden" id="entryId" />
 
@@ -159,59 +158,56 @@
         <p id="costPreview" class="cost-preview">月額換算: ¥0 / 年額換算: ¥0</p>
 
         <menu>
-          <button type="button" id="deleteInModalBtn" class="btn danger" hidden>削除</button>
-          <button type="button" id="cancelModalBtn" class="btn">キャンセル</button>
-          <button type="submit" class="btn primary">保存</button>
+          <small id="modalUpdatedAt" class="modal-updated modal-updated-footer"></small>
+          <div class="menu-actions">
+            <button type="button" id="deleteInModalBtn" class="btn danger" hidden>削除</button>
+            <button type="button" id="cancelModalBtn" class="btn">キャンセル</button>
+            <button type="submit" class="btn primary">保存</button>
+          </div>
         </menu>
       </form>
     </dialog>
 
     <dialog id="viewModal" class="entry-modal view-modal">
       <div class="view-shell">
-        <header class="view-hero">
-          <div>
+        <section class="view-head">
+          <div class="view-head-row">
             <h3 id="viewServiceName" class="view-service">-</h3>
-            <p id="viewProviderName" class="view-provider">-</p>
+            <span id="viewCategory" class="view-pill"></span>
           </div>
-          <small id="viewUpdatedAt" class="modal-updated"></small>
-        </header>
-
-        <section class="view-meta">
-          <span id="viewCategory" class="view-pill"></span>
-          <div id="viewTags" class="view-tags"></div>
+          <div class="view-head-row view-sub-row">
+            <p id="viewProviderName" class="view-provider">-</p>
+            <div id="viewTags" class="view-tags"></div>
+          </div>
         </section>
 
         <section class="view-money">
           <div class="view-cycle-card">
-            <p class="view-label">請求</p>
+            <p id="viewCyclePay" class="view-cycle-pay">-</p>
             <p id="viewAmountPerCycle" class="view-cycle-amount">-</p>
-            <p id="viewCycle" class="view-cycle-text">-</p>
-          </div>
-          <div class="view-compare">
-            <div>
-              <p class="view-label">月額換算</p>
-              <p id="viewMonthlyCost" class="view-amount-strong">-</p>
+            <div class="view-compare-head">
+              <p class="view-label">1ヶ月あたり</p>
+              <p class="view-label">1年あたり</p>
             </div>
-            <div>
-              <p class="view-label">年額換算</p>
+            <div class="view-compare-values">
+              <p id="viewMonthlyCost" class="view-amount-strong">-</p>
               <p id="viewYearlyCost" class="view-amount">-</p>
             </div>
           </div>
         </section>
 
-        <section class="view-payment">
-          <p class="view-label">支払い</p>
-          <p id="viewPaymentLine" class="view-payment-line">-</p>
-        </section>
-
-        <section id="viewNotesBlock" class="view-notes-block">
-          <p class="view-label">メモ</p>
-          <p id="viewNotes" class="view-notes">-</p>
+        <section class="view-info">
+          <p><span class="view-info-key">支払方法</span><span id="viewPaymentMethod" class="view-info-value">-</span></p>
+          <p><span class="view-info-key">ID</span><span id="viewAccountIdentifier" class="view-info-value">-</span></p>
+          <p id="viewNotesRow"><span class="view-info-key">メモ</span><span id="viewNotes" class="view-info-value">-</span></p>
         </section>
 
         <menu>
-          <button type="button" id="viewCloseBtn" class="btn">閉じる</button>
-          <button type="button" id="viewEditBtn" class="btn primary">編集</button>
+          <small id="viewUpdatedAt" class="modal-updated modal-updated-footer"></small>
+          <div class="menu-actions">
+            <button type="button" id="viewCloseBtn" class="btn">閉じる</button>
+            <button type="button" id="viewEditBtn" class="btn primary">編集</button>
+          </div>
         </menu>
       </div>
     </dialog>

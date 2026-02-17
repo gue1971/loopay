@@ -47,12 +47,13 @@ const el = {
   viewProviderName: document.getElementById("viewProviderName"),
   viewCategory: document.getElementById("viewCategory"),
   viewTags: document.getElementById("viewTags"),
-  viewCycle: document.getElementById("viewCycle"),
+  viewCyclePay: document.getElementById("viewCyclePay"),
   viewAmountPerCycle: document.getElementById("viewAmountPerCycle"),
   viewMonthlyCost: document.getElementById("viewMonthlyCost"),
   viewYearlyCost: document.getElementById("viewYearlyCost"),
-  viewPaymentLine: document.getElementById("viewPaymentLine"),
-  viewNotesBlock: document.getElementById("viewNotesBlock"),
+  viewPaymentMethod: document.getElementById("viewPaymentMethod"),
+  viewAccountIdentifier: document.getElementById("viewAccountIdentifier"),
+  viewNotesRow: document.getElementById("viewNotesRow"),
   viewNotes: document.getElementById("viewNotes"),
   viewCloseBtn: document.getElementById("viewCloseBtn"),
   viewEditBtn: document.getElementById("viewEditBtn"),
@@ -88,6 +89,16 @@ function formatYenText(value) {
 
 function formatRoundedYenText(value) {
   return formatYenText(Math.round(toNumber(value)));
+}
+
+function formatUpdatedDate(value) {
+  if (!value) return "";
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return "";
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `更新日:${y}/${m}/${day}`;
 }
 
 function toNumber(value) {
@@ -139,6 +150,17 @@ function cycleLabel(cycle) {
     biyearly: "2年",
   };
   return map[normalizeCycle(cycle)] || "1ヶ月";
+}
+
+function cyclePayLabel(cycle) {
+  const map = {
+    monthly: "月払",
+    bimonthly: "2ヶ月払",
+    semiannual: "半年払",
+    yearly: "年払",
+    biyearly: "2年払",
+  };
+  return map[normalizeCycle(cycle)] || "月払";
 }
 
 function normalizeCategory(categoryRaw) {
@@ -395,9 +417,7 @@ function updateCostPreview() {
 function openModal(editEntry = null) {
   if (editEntry) {
     el.modalTitle.textContent = "サブスク編集";
-    el.modalUpdatedAt.textContent = editEntry.updatedAt
-      ? `最終更新: ${new Date(editEntry.updatedAt).toLocaleDateString("ja-JP")}`
-      : "";
+    el.modalUpdatedAt.textContent = formatUpdatedDate(editEntry.updatedAt);
     el.deleteInModalBtn.hidden = false;
     el.entryId.value = editEntry.id;
     el.serviceName.value = editEntry.serviceName;
@@ -430,25 +450,22 @@ function closeModal() {
 
 function openViewModal(entry) {
   const display = applyLiveEdit(entry);
-  el.viewUpdatedAt.textContent = display.updatedAt
-    ? `最終更新: ${new Date(display.updatedAt).toLocaleDateString("ja-JP")}`
-    : "";
+  el.viewUpdatedAt.textContent = formatUpdatedDate(display.updatedAt);
   el.viewServiceName.textContent = display.serviceName || "未設定";
   el.viewProviderName.textContent = display.providerName || "";
   el.viewCategory.textContent = display.category || "カテゴリ未設定";
   el.viewTags.innerHTML = display.tags.length
-    ? display.tags.map((tag) => `<span class="chip-btn view-tag-chip">#${escapeHtml(tag)}</span>`).join("")
+    ? display.tags.map((tag) => `<span class="view-tag-chip">${escapeHtml(tag)}</span>`).join("")
     : "";
   el.viewTags.hidden = display.tags.length === 0;
-  el.viewCycle.textContent = cycleLabel(display.billingCycle);
-  el.viewAmountPerCycle.textContent = formatYen(display.amountPerCycle);
+  el.viewCyclePay.textContent = cyclePayLabel(display.billingCycle);
+  el.viewAmountPerCycle.textContent = formatYenText(display.amountPerCycle);
   el.viewMonthlyCost.textContent = formatRoundedYen(display.monthlyCost);
-  el.viewYearlyCost.textContent = formatYen(display.yearlyCost);
-  const paymentMethod = display.paymentMethod || "支払方法未設定";
-  const accountId = display.accountIdentifier ? `ID ${display.accountIdentifier}` : "ID未設定";
-  el.viewPaymentLine.textContent = `${paymentMethod} ・ ${accountId}`;
+  el.viewYearlyCost.textContent = formatYenText(display.yearlyCost);
+  el.viewPaymentMethod.textContent = display.paymentMethod || "未設定";
+  el.viewAccountIdentifier.textContent = display.accountIdentifier || "未設定";
   el.viewNotes.textContent = display.notes || "";
-  el.viewNotesBlock.hidden = !display.notes;
+  el.viewNotesRow.hidden = !display.notes;
   el.viewEditBtn.dataset.id = display.id;
   el.viewModal.showModal();
 }
