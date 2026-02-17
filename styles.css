@@ -434,7 +434,7 @@ td .row-actions {
 }
 
 .view-modal .view-shell {
-  background: #ffffff;
+  background: #f3fffb;
   padding: 1.02rem;
   max-height: calc(100dvh - 0.8rem);
   overflow: auto;
@@ -445,6 +445,10 @@ td .row-actions {
 .view-head {
   display: grid;
   gap: 0.34rem;
+  margin: -1.02rem -1.02rem 0;
+  padding: 0.84rem 1.02rem 0.48rem;
+  background: #dff4f7;
+  border-bottom: 1px solid #c7e5eb;
 }
 
 .view-head-row {
@@ -456,8 +460,8 @@ td .row-actions {
 
 .view-sub-row {
   align-items: flex-start;
-  padding-bottom: 0.56rem;
-  border-bottom: 1px solid #def1f5;
+  padding-bottom: 0.2rem;
+  border-bottom: 0;
 }
 
 .view-service {
@@ -508,7 +512,7 @@ td .row-actions {
 }
 
 .view-cycle-card {
-  background: #f7fcfe;
+  background: #ffffff;
   border: 1px solid #d7edf1;
   border-radius: 14px;
   padding: 0.84rem 0.9rem;
@@ -691,6 +695,13 @@ menu {
   gap: 0.6rem;
 }
 
+.view-modal menu {
+  margin: 0.62rem -1.02rem -1.02rem;
+  padding: 0.62rem 1.02rem 0.78rem;
+  background: #dff4f7;
+  border-top: 1px solid #c7e5eb;
+}
+
 .menu-actions {
   display: inline-flex;
   justify-content: flex-end;
@@ -854,6 +865,11 @@ menu {
     gap: 0.66rem;
   }
 
+  .view-head {
+    margin: -0.84rem -0.84rem 0;
+    padding: 0.72rem 0.84rem 0.44rem;
+  }
+
   .view-service {
     font-size: 1.02rem;
   }
@@ -886,6 +902,11 @@ menu {
 
   menu {
     gap: 0.44rem;
+  }
+
+  .view-modal menu {
+    margin: 0.52rem -0.84rem -0.84rem;
+    padding: 0.52rem 0.84rem 0.68rem;
   }
 
   .menu-actions {

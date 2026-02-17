@@ -528,7 +528,7 @@ function buildDatedFileName() {
   const dd = pad2(now.getDate());
   const hh = pad2(now.getHours());
   const min = pad2(now.getMinutes());
-  return `subsc${yyyy}-${mm}-${dd}-${hh}-${min}.json`;
+  return `lpy_${yyyy}-${mm}-${dd}-${hh}-${min}.json`;
 }
 
 function downloadJson(fileName) {
@@ -661,6 +661,10 @@ function setupEvents() {
       openViewModal(item);
     }
   });
+  el.entryModal.addEventListener("click", (event) => {
+    if (event.target !== el.entryModal) return;
+    el.cancelModalBtn.click();
+  });
   el.viewCloseBtn.addEventListener("click", closeViewModal);
   el.viewEditBtn.addEventListener("click", () => {
     const id = el.viewEditBtn.dataset.id;
@@ -669,6 +673,10 @@ function setupEvents() {
     if (!item) return;
     closeViewModal();
     openModal(item, { fromView: true });
+  });
+  el.viewModal.addEventListener("click", (event) => {
+    if (event.target !== el.viewModal) return;
+    closeViewModal();
   });
   el.deleteInModalBtn.addEventListener("click", () => {
     const id = el.entryId.value;
