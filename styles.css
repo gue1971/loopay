@@ -435,16 +435,16 @@ td .row-actions {
 
 .view-modal .view-shell {
   background: #ffffff;
-  padding: 0.9rem;
+  padding: 1.02rem;
   max-height: calc(100dvh - 0.8rem);
   overflow: auto;
   display: grid;
-  gap: 0.64rem;
+  gap: 0.86rem;
 }
 
 .view-head {
   display: grid;
-  gap: 0.28rem;
+  gap: 0.34rem;
 }
 
 .view-head-row {
@@ -456,7 +456,7 @@ td .row-actions {
 
 .view-sub-row {
   align-items: flex-start;
-  padding-bottom: 0.44rem;
+  padding-bottom: 0.56rem;
   border-bottom: 1px solid #def1f5;
 }
 
@@ -510,8 +510,9 @@ td .row-actions {
 .view-cycle-card {
   background: #f7fcfe;
   border: 1px solid #d7edf1;
-  border-radius: 12px;
-  padding: 0.56rem 0.62rem;
+  border-radius: 14px;
+  padding: 0.84rem 0.9rem;
+  margin: 0.06rem 0 0.16rem;
 }
 
 .view-label {
@@ -538,8 +539,10 @@ td .row-actions {
 .view-pay-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.56rem;
+  gap: 0.66rem 0.9rem;
   align-items: baseline;
+  justify-items: center;
+  text-align: center;
 }
 
 .view-pay-head,
@@ -567,14 +570,16 @@ td .row-actions {
 
 .view-info {
   display: grid;
-  gap: 0.28rem;
+  gap: 0.48rem;
+  margin-top: 0.12rem;
+  padding: 0.04rem 0.08rem;
 }
 
 .view-info p {
   margin: 0;
   display: grid;
   grid-template-columns: 5.2rem 1fr;
-  gap: 0.38rem;
+  gap: 0.62rem;
   align-items: baseline;
 }
 
@@ -586,7 +591,7 @@ td .row-actions {
 .view-info-value {
   color: #16384a;
   font-size: 0.92rem;
-  line-height: 1.45;
+  line-height: 1.58;
   word-break: break-word;
   white-space: pre-wrap;
 }
@@ -845,8 +850,8 @@ menu {
 
   .view-modal .view-shell {
     max-height: calc(100dvh - 0.5rem);
-    padding: 0.68rem;
-    gap: 0.48rem;
+    padding: 0.84rem;
+    gap: 0.66rem;
   }
 
   .view-service {
@@ -865,9 +870,18 @@ menu {
     justify-content: flex-start;
   }
 
+  .view-cycle-card {
+    padding: 0.78rem 0.72rem;
+    margin: 0.02rem 0 0.1rem;
+  }
+
+  .view-pay-grid {
+    gap: 0.56rem 0.56rem;
+  }
+
   .view-info p {
     grid-template-columns: 4.5rem 1fr;
-    gap: 0.32rem;
+    gap: 0.52rem;
   }
 
   menu {
