@@ -641,7 +641,7 @@ textarea:focus {
 }
 
 .entry-modal form {
-  background: #ffffff;
+  background: #f3fffb;
   display: grid;
   gap: 0.56rem;
   padding: 0.86rem;
@@ -654,8 +654,10 @@ textarea:focus {
   justify-content: space-between;
   align-items: baseline;
   gap: 0.8rem;
-  padding-bottom: 0.36rem;
-  border-bottom: 1px solid #def1f5;
+  margin: -0.86rem -0.86rem 0;
+  padding: 0.72rem 0.86rem 0.52rem;
+  background: #dff4f7;
+  border-bottom: 1px solid #c7e5eb;
 }
 
 .modal-title-row h3 {
@@ -693,6 +695,13 @@ menu {
   justify-content: space-between;
   align-items: center;
   gap: 0.6rem;
+}
+
+.entry-modal form > menu {
+  margin: 0.56rem -0.86rem -0.86rem;
+  padding: 0.56rem 0.86rem 0.72rem;
+  background: #dff4f7;
+  border-top: 1px solid #c7e5eb;
 }
 
 .view-modal menu {
@@ -851,6 +860,11 @@ menu {
     gap: 0.48rem;
   }
 
+  .entry-modal .modal-title-row {
+    margin: -0.68rem -0.68rem 0;
+    padding: 0.62rem 0.68rem 0.44rem;
+  }
+
   .modal-title-row h3 {
     font-size: 0.96rem;
   }
@@ -902,6 +916,11 @@ menu {
 
   menu {
     gap: 0.44rem;
+  }
+
+  .entry-modal form > menu {
+    margin: 0.48rem -0.68rem -0.68rem;
+    padding: 0.48rem 0.68rem 0.62rem;
   }
 
   .view-modal menu {
