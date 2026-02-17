@@ -433,43 +433,139 @@ td .row-actions {
   display: block;
 }
 
-.view-modal .view-body {
+.view-modal .view-shell {
   background: #ffffff;
-  padding: 0.86rem;
+  padding: 0.9rem;
   max-height: calc(100dvh - 0.8rem);
   overflow: auto;
   display: grid;
-  gap: 0.56rem;
+  gap: 0.6rem;
 }
 
-.view-grid {
+.view-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.1rem 0 0.44rem;
+  border-bottom: 1px solid #def1f5;
+}
+
+.view-service {
   margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  color: #0f2b3b;
+}
+
+.view-provider {
+  margin: 0.2rem 0 0;
+  color: #537083;
+  font-size: 0.9rem;
+}
+
+.view-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+  align-items: center;
+}
+
+.view-pill,
+.view-tag-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--chip-line);
+  background: var(--chip-bg);
+  color: #26465c;
+  font-size: 0.8rem;
+  line-height: 1.15;
+  padding: 0.26rem 0.68rem;
+}
+
+.view-pill {
+  background: #dff4f7;
+  border-color: #9fd6de;
+  color: #154a54;
+  font-weight: 700;
+}
+
+.view-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.view-money {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1.2fr 1fr;
   gap: 0.5rem;
 }
 
-.view-grid > div {
+.view-cycle-card,
+.view-compare,
+.view-payment,
+.view-notes-block {
   background: #f7fcfe;
-  border: 1px solid #d8edf2;
-  border-radius: 10px;
-  padding: 0.46rem 0.56rem;
+  border: 1px solid #d7edf1;
+  border-radius: 12px;
+  padding: 0.56rem 0.62rem;
 }
 
-.view-grid > div.wide {
-  grid-column: 1 / -1;
-}
-
-.view-grid dt {
+.view-label {
   margin: 0;
-  font-size: 0.75rem;
-  color: #678191;
+  color: #668293;
+  font-size: 0.76rem;
 }
 
-.view-grid dd {
+.view-cycle-amount {
+  margin: 0.14rem 0 0;
+  color: #143546;
+  font-size: 1.22rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.view-cycle-text {
+  margin: 0.18rem 0 0;
+  color: #365367;
+  font-size: 0.84rem;
+}
+
+.view-compare {
+  display: grid;
+  gap: 0.46rem;
+}
+
+.view-amount-strong,
+.view-amount {
+  margin: 0.12rem 0 0;
+  color: #143546;
+  font-size: 0.96rem;
+}
+
+.view-amount-strong {
+  font-weight: 800;
+}
+
+.view-amount {
+  font-weight: 500;
+}
+
+.view-payment-line {
   margin: 0.16rem 0 0;
-  font-size: 0.92rem;
   color: #153445;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.view-notes {
+  margin: 0.16rem 0 0;
+  color: #153445;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
   word-break: break-word;
 }
 
@@ -712,15 +808,27 @@ menu {
     font-size: 0.74rem;
   }
 
-  .view-modal .view-body {
+  .view-modal .view-shell {
     max-height: calc(100dvh - 0.5rem);
     padding: 0.68rem;
     gap: 0.48rem;
   }
 
-  .view-grid {
+  .view-money {
     grid-template-columns: 1fr;
     gap: 0.44rem;
+  }
+
+  .view-service {
+    font-size: 1.02rem;
+  }
+
+  .view-provider {
+    font-size: 0.85rem;
+  }
+
+  .view-cycle-amount {
+    font-size: 1.14rem;
   }
 }
 

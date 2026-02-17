@@ -167,24 +167,48 @@
     </dialog>
 
     <dialog id="viewModal" class="entry-modal view-modal">
-      <div class="view-body">
-        <div class="modal-title-row">
-          <h3 id="viewTitle">サブスク内容</h3>
+      <div class="view-shell">
+        <header class="view-hero">
+          <div>
+            <h3 id="viewServiceName" class="view-service">-</h3>
+            <p id="viewProviderName" class="view-provider">-</p>
+          </div>
           <small id="viewUpdatedAt" class="modal-updated"></small>
-        </div>
-        <dl class="view-grid">
-          <div><dt>サービス名</dt><dd id="viewServiceName"></dd></div>
-          <div><dt>提供元</dt><dd id="viewProviderName"></dd></div>
-          <div><dt>カテゴリ</dt><dd id="viewCategory"></dd></div>
-          <div><dt>タグ</dt><dd id="viewTags"></dd></div>
-          <div><dt>請求サイクル</dt><dd id="viewCycle"></dd></div>
-          <div><dt>請求金額</dt><dd id="viewAmountPerCycle"></dd></div>
-          <div><dt>月額換算</dt><dd id="viewMonthlyCost"></dd></div>
-          <div><dt>年額換算</dt><dd id="viewYearlyCost"></dd></div>
-          <div><dt>ID</dt><dd id="viewAccountIdentifier"></dd></div>
-          <div><dt>支払方法</dt><dd id="viewPaymentMethod"></dd></div>
-          <div class="wide"><dt>メモ</dt><dd id="viewNotes"></dd></div>
-        </dl>
+        </header>
+
+        <section class="view-meta">
+          <span id="viewCategory" class="view-pill"></span>
+          <div id="viewTags" class="view-tags"></div>
+        </section>
+
+        <section class="view-money">
+          <div class="view-cycle-card">
+            <p class="view-label">請求</p>
+            <p id="viewAmountPerCycle" class="view-cycle-amount">-</p>
+            <p id="viewCycle" class="view-cycle-text">-</p>
+          </div>
+          <div class="view-compare">
+            <div>
+              <p class="view-label">月額換算</p>
+              <p id="viewMonthlyCost" class="view-amount-strong">-</p>
+            </div>
+            <div>
+              <p class="view-label">年額換算</p>
+              <p id="viewYearlyCost" class="view-amount">-</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="view-payment">
+          <p class="view-label">支払い</p>
+          <p id="viewPaymentLine" class="view-payment-line">-</p>
+        </section>
+
+        <section id="viewNotesBlock" class="view-notes-block">
+          <p class="view-label">メモ</p>
+          <p id="viewNotes" class="view-notes">-</p>
+        </section>
+
         <menu>
           <button type="button" id="viewCloseBtn" class="btn">閉じる</button>
           <button type="button" id="viewEditBtn" class="btn primary">編集</button>

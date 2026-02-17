@@ -42,7 +42,6 @@ const el = {
   deleteInModalBtn: document.getElementById("deleteInModalBtn"),
   cancelModalBtn: document.getElementById("cancelModalBtn"),
   viewModal: document.getElementById("viewModal"),
-  viewTitle: document.getElementById("viewTitle"),
   viewUpdatedAt: document.getElementById("viewUpdatedAt"),
   viewServiceName: document.getElementById("viewServiceName"),
   viewProviderName: document.getElementById("viewProviderName"),
@@ -52,8 +51,8 @@ const el = {
   viewAmountPerCycle: document.getElementById("viewAmountPerCycle"),
   viewMonthlyCost: document.getElementById("viewMonthlyCost"),
   viewYearlyCost: document.getElementById("viewYearlyCost"),
-  viewAccountIdentifier: document.getElementById("viewAccountIdentifier"),
-  viewPaymentMethod: document.getElementById("viewPaymentMethod"),
+  viewPaymentLine: document.getElementById("viewPaymentLine"),
+  viewNotesBlock: document.getElementById("viewNotesBlock"),
   viewNotes: document.getElementById("viewNotes"),
   viewCloseBtn: document.getElementById("viewCloseBtn"),
   viewEditBtn: document.getElementById("viewEditBtn"),
@@ -431,21 +430,25 @@ function closeModal() {
 
 function openViewModal(entry) {
   const display = applyLiveEdit(entry);
-  el.viewTitle.textContent = "サブスク内容";
   el.viewUpdatedAt.textContent = display.updatedAt
     ? `最終更新: ${new Date(display.updatedAt).toLocaleDateString("ja-JP")}`
     : "";
   el.viewServiceName.textContent = display.serviceName || "未設定";
-  el.viewProviderName.textContent = display.providerName || "未設定";
-  el.viewCategory.textContent = display.category || "未設定";
-  el.viewTags.textContent = display.tags.length ? display.tags.map((tag) => `#${tag}`).join(" ") : "なし";
+  el.viewProviderName.textContent = display.providerName || "";
+  el.viewCategory.textContent = display.category || "カテゴリ未設定";
+  el.viewTags.innerHTML = display.tags.length
+    ? display.tags.map((tag) => `<span class="chip-btn view-tag-chip">#${escapeHtml(tag)}</span>`).join("")
+    : "";
+  el.viewTags.hidden = display.tags.length === 0;
   el.viewCycle.textContent = cycleLabel(display.billingCycle);
   el.viewAmountPerCycle.textContent = formatYen(display.amountPerCycle);
   el.viewMonthlyCost.textContent = formatRoundedYen(display.monthlyCost);
   el.viewYearlyCost.textContent = formatYen(display.yearlyCost);
-  el.viewAccountIdentifier.textContent = display.accountIdentifier || "未設定";
-  el.viewPaymentMethod.textContent = display.paymentMethod || "未設定";
-  el.viewNotes.textContent = display.notes || "なし";
+  const paymentMethod = display.paymentMethod || "支払方法未設定";
+  const accountId = display.accountIdentifier ? `ID ${display.accountIdentifier}` : "ID未設定";
+  el.viewPaymentLine.textContent = `${paymentMethod} ・ ${accountId}`;
+  el.viewNotes.textContent = display.notes || "";
+  el.viewNotesBlock.hidden = !display.notes;
   el.viewEditBtn.dataset.id = display.id;
   el.viewModal.showModal();
 }
