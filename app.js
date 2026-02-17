@@ -354,7 +354,7 @@ function renderRows() {
           <div class="cost-line"><span>${formatYenText(display.yearlyCost)}</span></div>
         </td>
         <td class="idpay-cell"><span>${escapeHtml(display.accountIdentifier)}</span><br><small>${escapeHtml(display.paymentMethod)}</small></td>
-        <td class="memo-cell">${escapeHtml(display.notes)}</td>
+        <td class="memo-cell">${formatMultilineHtml(display.notes)}</td>
       </tr>`;
       }
     )
@@ -368,6 +368,10 @@ function escapeHtml(text) {
     .replace(/>/g, "&gt;")
     .replace(/\"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+function formatMultilineHtml(text) {
+  return escapeHtml(text).replace(/\r?\n/g, "<br>");
 }
 
 function ensureSelectValue(selectEl, value) {
