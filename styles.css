@@ -503,12 +503,6 @@ td .row-actions {
   justify-content: flex-end;
 }
 
-.view-tag-chip {
-  background: #fff4e4;
-  border-color: #f2d1a8;
-  color: #7b4b1f;
-}
-
 .view-money {
   display: block;
 }
@@ -530,7 +524,7 @@ td .row-actions {
   margin: 0;
   color: #33566b;
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .view-cycle-amount {
@@ -541,35 +535,34 @@ td .row-actions {
   line-height: 1.2;
 }
 
-.view-compare-head,
-.view-compare-values {
+.view-pay-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.56rem;
   align-items: baseline;
 }
 
-.view-compare-head {
-  margin-top: 0.44rem;
-}
-
-.view-compare-values {
-  margin-top: 0.06rem;
-}
-
-.view-amount-strong,
-.view-amount {
+.view-pay-head,
+.view-pay-value {
   margin: 0;
   color: #143546;
-  font-size: 0.96rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  white-space: nowrap;
 }
 
-.view-amount-strong {
+.view-pay-head {
+  color: #668293;
+  font-size: 0.8rem;
+}
+
+.view-pay-value {
+  font-size: 1.02rem;
+}
+
+.view-pay-main {
   font-weight: 800;
-}
-
-.view-amount {
-  font-weight: 500;
+  color: #143546;
 }
 
 .view-info {

@@ -2,6 +2,7 @@ const state = {
   dataFileName: "subscriptions.json",
   subscriptions: [],
   liveEdit: null,
+  returnViewEntryId: null,
   filters: {
     category: "all",
     tags: [],
@@ -414,9 +415,10 @@ function updateCostPreview() {
   syncLiveEditFromForm();
 }
 
-function openModal(editEntry = null) {
+function openModal(editEntry = null, options = {}) {
+  const { fromView = false } = options;
   if (editEntry) {
-    el.modalTitle.textContent = "サブスク編集";
+    el.modalTitle.textContent = "支払内容の編集";
     el.modalUpdatedAt.textContent = formatUpdatedDate(editEntry.updatedAt);
     el.deleteInModalBtn.hidden = false;
     el.entryId.value = editEntry.id;
@@ -430,6 +432,7 @@ function openModal(editEntry = null) {
     ensureSelectValue(el.paymentMethod, editEntry.paymentMethod);
     el.notes.value = editEntry.notes;
     state.liveEdit = null;
+    state.returnViewEntryId = fromView ? editEntry.id : null;
   } else {
     el.modalTitle.textContent = "サブスク登録";
     el.modalUpdatedAt.textContent = "";
@@ -439,6 +442,7 @@ function openModal(editEntry = null) {
     el.billingCycle.value = "monthly";
     el.category.value = "生活";
     state.liveEdit = null;
+    state.returnViewEntryId = null;
   }
   updateCostPreview();
   el.entryModal.showModal();
@@ -460,7 +464,7 @@ function openViewModal(entry) {
   el.viewTags.hidden = display.tags.length === 0;
   el.viewCyclePay.textContent = cyclePayLabel(display.billingCycle);
   el.viewAmountPerCycle.textContent = formatYenText(display.amountPerCycle);
-  el.viewMonthlyCost.textContent = formatRoundedYen(display.monthlyCost);
+  el.viewMonthlyCost.textContent = formatRoundedYenText(display.monthlyCost);
   el.viewYearlyCost.textContent = formatYenText(display.yearlyCost);
   el.viewPaymentMethod.textContent = display.paymentMethod || "未設定";
   el.viewAccountIdentifier.textContent = display.accountIdentifier || "未設定";
@@ -642,7 +646,16 @@ function setupEvents() {
     node.addEventListener("change", updateCostPreview);
   });
 
-  el.cancelModalBtn.addEventListener("click", closeModal);
+  el.cancelModalBtn.addEventListener("click", () => {
+    const returnId = state.returnViewEntryId;
+    closeModal();
+    if (!returnId) return;
+    const item = state.subscriptions.find((entry) => entry.id === returnId);
+    state.returnViewEntryId = null;
+    if (item) {
+      openViewModal(item);
+    }
+  });
   el.viewCloseBtn.addEventListener("click", closeViewModal);
   el.viewEditBtn.addEventListener("click", () => {
     const id = el.viewEditBtn.dataset.id;
@@ -650,7 +663,7 @@ function setupEvents() {
     const item = state.subscriptions.find((entry) => entry.id === id);
     if (!item) return;
     closeViewModal();
-    openModal(item);
+    openModal(item, { fromView: true });
   });
   el.deleteInModalBtn.addEventListener("click", () => {
     const id = el.entryId.value;
@@ -659,6 +672,7 @@ function setupEvents() {
     if (!item) return;
     if (!confirm(`${item.serviceName} を削除しますか？`)) return;
     state.subscriptions = state.subscriptions.filter((entry) => entry.id !== id);
+    state.returnViewEntryId = null;
     closeModal();
     render();
   });
@@ -700,6 +714,7 @@ function setupEvents() {
     }
 
     state.liveEdit = null;
+    state.returnViewEntryId = null;
     closeModal();
     render();
   });
@@ -710,6 +725,7 @@ function setupEvents() {
       renderRows();
       renderSummary();
     }
+    state.returnViewEntryId = null;
   });
 }
 
