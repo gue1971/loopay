@@ -41,6 +41,22 @@ const el = {
   modalUpdatedAt: document.getElementById("modalUpdatedAt"),
   deleteInModalBtn: document.getElementById("deleteInModalBtn"),
   cancelModalBtn: document.getElementById("cancelModalBtn"),
+  viewModal: document.getElementById("viewModal"),
+  viewTitle: document.getElementById("viewTitle"),
+  viewUpdatedAt: document.getElementById("viewUpdatedAt"),
+  viewServiceName: document.getElementById("viewServiceName"),
+  viewProviderName: document.getElementById("viewProviderName"),
+  viewCategory: document.getElementById("viewCategory"),
+  viewTags: document.getElementById("viewTags"),
+  viewCycle: document.getElementById("viewCycle"),
+  viewAmountPerCycle: document.getElementById("viewAmountPerCycle"),
+  viewMonthlyCost: document.getElementById("viewMonthlyCost"),
+  viewYearlyCost: document.getElementById("viewYearlyCost"),
+  viewAccountIdentifier: document.getElementById("viewAccountIdentifier"),
+  viewPaymentMethod: document.getElementById("viewPaymentMethod"),
+  viewNotes: document.getElementById("viewNotes"),
+  viewCloseBtn: document.getElementById("viewCloseBtn"),
+  viewEditBtn: document.getElementById("viewEditBtn"),
 };
 
 function nowIso() {
@@ -113,6 +129,17 @@ function cycleMonths(cycle) {
     biyearly: 24,
   };
   return monthsByCycle[normalizeCycle(cycle)] || 1;
+}
+
+function cycleLabel(cycle) {
+  const map = {
+    monthly: "1ヶ月",
+    bimonthly: "2ヶ月",
+    semiannual: "6ヶ月",
+    yearly: "1年",
+    biyearly: "2年",
+  };
+  return map[normalizeCycle(cycle)] || "1ヶ月";
 }
 
 function normalizeCategory(categoryRaw) {
@@ -298,7 +325,7 @@ function renderRows() {
         const display = applyLiveEdit(item);
         const tagLine = display.tags.length ? display.tags.map((tag) => `#${escapeHtml(tag)}`).join(" ") : "";
         return `
-      <tr>
+      <tr class="clickable-row" data-id="${display.id}">
         <td class="service-cell"><strong>${escapeHtml(display.serviceName)}</strong><br><small>${escapeHtml(display.providerName)}</small><br><small class="service-tags">${tagLine}</small></td>
         <td class="cost-cell">
           <div class="cost-line"><strong>${formatRoundedYenText(display.monthlyCost)}</strong></div>
@@ -306,15 +333,6 @@ function renderRows() {
         </td>
         <td class="idpay-cell"><span>${escapeHtml(display.accountIdentifier)}</span><br><small>${escapeHtml(display.paymentMethod)}</small></td>
         <td class="memo-cell">${escapeHtml(display.notes)}</td>
-        <td>
-          <div class="row-actions">
-            <button class="icon-btn edit-btn" data-action="edit" data-id="${display.id}" aria-label="編集" title="編集">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 20h4l10-10-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </button>
-          </div>
-        </td>
       </tr>`;
       }
     )
@@ -409,6 +427,31 @@ function openModal(editEntry = null) {
 
 function closeModal() {
   el.entryModal.close();
+}
+
+function openViewModal(entry) {
+  const display = applyLiveEdit(entry);
+  el.viewTitle.textContent = "サブスク内容";
+  el.viewUpdatedAt.textContent = display.updatedAt
+    ? `最終更新: ${new Date(display.updatedAt).toLocaleDateString("ja-JP")}`
+    : "";
+  el.viewServiceName.textContent = display.serviceName || "未設定";
+  el.viewProviderName.textContent = display.providerName || "未設定";
+  el.viewCategory.textContent = display.category || "未設定";
+  el.viewTags.textContent = display.tags.length ? display.tags.map((tag) => `#${tag}`).join(" ") : "なし";
+  el.viewCycle.textContent = cycleLabel(display.billingCycle);
+  el.viewAmountPerCycle.textContent = formatYen(display.amountPerCycle);
+  el.viewMonthlyCost.textContent = formatRoundedYen(display.monthlyCost);
+  el.viewYearlyCost.textContent = formatYen(display.yearlyCost);
+  el.viewAccountIdentifier.textContent = display.accountIdentifier || "未設定";
+  el.viewPaymentMethod.textContent = display.paymentMethod || "未設定";
+  el.viewNotes.textContent = display.notes || "なし";
+  el.viewEditBtn.dataset.id = display.id;
+  el.viewModal.showModal();
+}
+
+function closeViewModal() {
+  el.viewModal.close();
 }
 
 function parseLoadedData(json) {
@@ -564,16 +607,14 @@ function setupEvents() {
   });
 
   el.rows.addEventListener("click", (event) => {
-    const target = event.target.closest("button[data-action]");
-    if (!target) return;
-    const id = target.dataset.id;
-    const action = target.dataset.action;
+    const interactive = event.target.closest("button, a, input, select, textarea, label");
+    if (interactive) return;
+    const row = event.target.closest("tr[data-id]");
+    if (!row) return;
+    const id = row.dataset.id;
     const item = state.subscriptions.find((entry) => entry.id === id);
     if (!item) return;
-
-    if (action === "edit") {
-      openModal(item);
-    }
+    openViewModal(item);
   });
 
   [el.billingCycle, el.billingAmount].forEach((node) => {
@@ -582,6 +623,15 @@ function setupEvents() {
   });
 
   el.cancelModalBtn.addEventListener("click", closeModal);
+  el.viewCloseBtn.addEventListener("click", closeViewModal);
+  el.viewEditBtn.addEventListener("click", () => {
+    const id = el.viewEditBtn.dataset.id;
+    if (!id) return;
+    const item = state.subscriptions.find((entry) => entry.id === id);
+    if (!item) return;
+    closeViewModal();
+    openModal(item);
+  });
   el.deleteInModalBtn.addEventListener("click", () => {
     const id = el.entryId.value;
     if (!id) return;

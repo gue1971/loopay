@@ -332,31 +332,34 @@ th {
 
 th:nth-child(1),
 td:nth-child(1) {
-  width: 33%;
+  width: 36%;
 }
 
 th:nth-child(2),
 td:nth-child(2) {
-  width: 20%;
+  width: 22%;
 }
 
 th:nth-child(3),
 td:nth-child(3) {
-  width: 20%;
+  width: 18%;
 }
 
 th:nth-child(4),
 td:nth-child(4) {
-  width: 23%;
-}
-
-th:nth-child(5),
-td:nth-child(5) {
-  width: 4%;
+  width: 24%;
 }
 
 tbody tr:hover td {
   background: #f8fdff;
+}
+
+tbody tr.clickable-row {
+  cursor: pointer;
+}
+
+tbody tr.clickable-row:active td {
+  background: #eef9fc;
 }
 
 .service-cell small,
@@ -428,6 +431,46 @@ td .row-actions {
   width: 0.9rem;
   height: 0.9rem;
   display: block;
+}
+
+.view-modal .view-body {
+  background: #ffffff;
+  padding: 0.86rem;
+  max-height: calc(100dvh - 0.8rem);
+  overflow: auto;
+  display: grid;
+  gap: 0.56rem;
+}
+
+.view-grid {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.view-grid > div {
+  background: #f7fcfe;
+  border: 1px solid #d8edf2;
+  border-radius: 10px;
+  padding: 0.46rem 0.56rem;
+}
+
+.view-grid > div.wide {
+  grid-column: 1 / -1;
+}
+
+.view-grid dt {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #678191;
+}
+
+.view-grid dd {
+  margin: 0.16rem 0 0;
+  font-size: 0.92rem;
+  color: #153445;
+  word-break: break-word;
 }
 
 .btn.danger,
@@ -625,17 +668,12 @@ menu {
 
   th:nth-child(1),
   td:nth-child(1) {
-    width: 56%;
+    width: 62%;
   }
 
   th:nth-child(2),
   td:nth-child(2) {
-    width: 34%;
-  }
-
-  th:nth-child(5),
-  td:nth-child(5) {
-    width: 10%;
+    width: 38%;
   }
 
   th,
@@ -672,6 +710,17 @@ menu {
 
   .modal-updated {
     font-size: 0.74rem;
+  }
+
+  .view-modal .view-body {
+    max-height: calc(100dvh - 0.5rem);
+    padding: 0.68rem;
+    gap: 0.48rem;
+  }
+
+  .view-grid {
+    grid-template-columns: 1fr;
+    gap: 0.44rem;
   }
 }
 
