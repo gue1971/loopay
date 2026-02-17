@@ -83,16 +83,36 @@ function toNumber(value) {
 function normalizeCycle(cycle) {
   const map = {
     monthly: "monthly",
+    bimonthly: "bimonthly",
+    semiannual: "semiannual",
     yearly: "yearly",
     biyearly: "biyearly",
+    "1ヶ月": "monthly",
     "月額": "monthly",
     "月払い": "monthly",
+    "2ヶ月": "bimonthly",
+    "隔月": "bimonthly",
+    "6ヶ月": "semiannual",
+    "半年": "semiannual",
+    "半期": "semiannual",
+    "1年": "yearly",
     "年額": "yearly",
     "年払い": "yearly",
     "2年": "biyearly",
     "二年": "biyearly",
   };
   return map[cycle] || "monthly";
+}
+
+function cycleMonths(cycle) {
+  const monthsByCycle = {
+    monthly: 1,
+    bimonthly: 2,
+    semiannual: 6,
+    yearly: 12,
+    biyearly: 24,
+  };
+  return monthsByCycle[normalizeCycle(cycle)] || 1;
 }
 
 function normalizeCategory(categoryRaw) {
@@ -107,13 +127,9 @@ function normalizeCategory(categoryRaw) {
 
 function computeCosts(cycle, amountPerCycle) {
   const amount = toNumber(amountPerCycle);
-  if (cycle === "yearly") {
-    return { monthlyCost: amount / 12, yearlyCost: amount };
-  }
-  if (cycle === "biyearly") {
-    return { monthlyCost: amount / 24, yearlyCost: amount / 2 };
-  }
-  return { monthlyCost: amount, yearlyCost: amount * 12 };
+  const months = cycleMonths(cycle);
+  const monthlyCost = months > 0 ? amount / months : 0;
+  return { monthlyCost, yearlyCost: monthlyCost * 12 };
 }
 
 function deriveAmountPerCycle(raw, cycle) {
@@ -122,21 +138,9 @@ function deriveAmountPerCycle(raw, cycle) {
 
   const monthly = toNumber(raw.monthlyCost);
   const yearly = toNumber(raw.yearlyCost);
-
-  if (cycle === "yearly") {
-    if (yearly > 0) return yearly;
-    if (monthly > 0) return monthly * 12;
-    return 0;
-  }
-
-  if (cycle === "biyearly") {
-    if (yearly > 0) return yearly * 2;
-    if (monthly > 0) return monthly * 24;
-    return 0;
-  }
-
-  if (monthly > 0) return monthly;
-  if (yearly > 0) return yearly / 12;
+  const months = cycleMonths(cycle);
+  if (monthly > 0) return monthly * months;
+  if (yearly > 0) return (yearly / 12) * months;
   return 0;
 }
 
