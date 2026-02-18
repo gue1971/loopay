@@ -439,7 +439,7 @@ function openModal(editEntry = null, options = {}) {
     state.liveEdit = null;
     state.returnViewEntryId = fromView ? editEntry.id : null;
   } else {
-    el.modalTitle.textContent = "サブスク登録";
+    el.modalTitle.textContent = "支出データの登録";
     el.modalUpdatedAt.textContent = "";
     el.deleteInModalBtn.hidden = true;
     el.entryForm.reset();
