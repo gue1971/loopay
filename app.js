@@ -549,6 +549,10 @@ function setupEvents() {
     openModal();
   });
 
+  el.jsonFileInput.addEventListener("click", () => {
+    el.jsonFileInput.value = "";
+  });
+
   el.jsonFileInput.addEventListener("change", (event) => {
     const file = event.target.files?.[0];
     if (file) {
